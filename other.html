@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Work — Chana Messinger</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #6b8cce;
+            --accent-dark: #4a6ba8;
+            --accent-light: #e8eef8;
+            --warm: #e6c347;
+            --card-gold: #e6c347;
+            --card-green: #7ec8a3;
+            --card-pink: #c49bbb;
+            --text-dark: #2d3436;
+            --text-medium: #636e72;
+            --background: #fafbfd;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-image: radial-gradient(circle, #d0d8e8 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* HEADER */
+        .page-header {
+            padding: 3rem 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent) 0%, #8ba7d4 35%, #b8c98a 65%, var(--warm) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        /* SECTION NAV */
+        .section-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-light);
+        }
+
+        .section-nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border: 2px solid var(--accent-light);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .section-nav a:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            scroll-margin-top: 2rem;
+        }
+
+        .content-section + .content-section {
+            border-top: 2px solid var(--accent-light);
+        }
+
+        .content-section h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Match card colors to homepage */
+        #writing h2 { color: var(--accent); }
+        #video h2 { color: var(--card-gold); }
+        #podcast h2 { color: var(--card-green); }
+        #other h2 { color: var(--card-pink); }
+
+        .content-section h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .content-section a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 2px solid var(--warm);
+            transition: all 0.2s;
+        }
+
+        .content-section a:hover {
+            border-bottom-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .link-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--accent-light);
+        }
+
+        .link-list li:last-child { border-bottom: none; }
+
+        .link-list .description {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-top: 0.2rem;
+        }
+
+        .under-construction {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(107, 140, 206, 0.08);
+        }
+
+        .under-construction .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .footer-links a:hover { text-decoration: underline; }
+
+        .footer-note {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <a href="index.html" class="back-link">&larr; Back home</a>
+        <h1>Other Work</h1>
+
+        <div class="section-nav">
+            <a href="#writing">Writing</a>
+            <a href="#video">Video</a>
+            <a href="#podcast">Podcast</a>
+            <a href="#other">Things I've done</a>
+        </div>
+    </div>
+
+    <!-- WRITING -->
+    <section class="content-section" id="writing">
+        <h2>Other Writing</h2>
+
+        <h3>Personal Blog</h3>
+        <ul class="link-list">
+            <li>
+                <a href="https://themerelyreal.wordpress.com/" target="_blank">The Merely Real</a>
+                <span class="description">Personal blog on WordPress — essays on rationality, teaching, and life</span>
+            </li>
+        </ul>
+
+        <h3>80,000 Hours</h3>
+        <ul class="link-list">
+            <li>
+                <a href="https://80000hours.org/author/chana-messinger/" target="_blank">Author page</a>
+                <span class="description">Articles and posts for 80,000 Hours</span>
+            </li>
+        </ul>
+
+        <h3>EA Forum</h3>
+        <ul class="link-list">
+            <li>
+                <a href="https://forum.effectivealtruism.org/users/chana_messinger" target="_blank">EA Forum profile</a>
+                <span class="description">Posts and comments on the Effective Altruism Forum</span>
+            </li>
+            <li>
+                <a href="https://forum.effectivealtruism.org/posts/GqC3wDjBRLoGsEKwP/our-boring-advice-for-teens" target="_blank">Our Boring Advice for Teens</a>
+                <span class="description">With Julia Wise &amp; Damon Sasi</span>
+            </li>
+        </ul>
+
+        <h3>Strange Notions</h3>
+        <ul class="link-list">
+            <li>
+                <a href="https://strangenotions.com/author/chana-messinger/" target="_blank">Guest posts</a>
+                <span class="description">Writing on atheism, religion, and dialogue</span>
+            </li>
+        </ul>
+
+        <h3>Centre for Effective Altruism</h3>
+        <ul class="link-list">
+            <li>
+                <a href="https://www.centreforeffectivealtruism.org/team/chana-messinger" target="_blank">Community health resources</a>
+                <span class="description">Community health updates and resources</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="content-section" id="video">
+        <h2>Other Video</h2>
+        <div class="under-construction">
+            <div class="emoji">🎬</div>
+            <p>Other video appearances and projects coming soon.</p>
+        </div>
+    </section>
+
+    <!-- PODCAST -->
+    <section class="content-section" id="podcast">
+        <h2>Other Podcast</h2>
+        <div class="under-construction">
+            <div class="emoji">🎙️</div>
+            <p>Other podcast appearances coming soon.</p>
+        </div>
+    </section>
+
+    <!-- OTHER -->
+    <section class="content-section" id="other">
+        <h2>Things I've Done</h2>
+        <div class="under-construction">
+            <div class="emoji">🚧</div>
+            <p>Assorted other appearances, projects, and things — coming soon.</p>
+            <p>In the meantime, find me on <a href="https://twitter.com/chanamessinger" target="_blank">Twitter</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-note">Made with the glories of Claude Cowork</p>
+    </footer>
+
+</body>
+</html>

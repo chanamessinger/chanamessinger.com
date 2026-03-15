@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chana Messinger</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #6b8cce;           /* Cornflower blue */
+            --accent-dark: #1e3a5f;      /* Navy blue */
+            --accent-light: #e8eef8;     /* Light cornflower tint */
+            --warm: #1e3a5f;             /* Navy for gradients */
+            --card-gold: #1e3a5f;        /* Navy */
+            --card-green: #9aa7b8;       /* Heather grey */
+            --card-pink: #b0bac6;        /* Light heather grey */
+            --text-dark: #1e3a5f;        /* Navy as primary text */
+            --text-medium: #6b7d8e;      /* Slate grey */
+            --background: #f5f7fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-image: radial-gradient(circle, #d0d8e8 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            left: 10%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, rgba(154, 167, 184, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(3rem, 12vw, 6rem);
+            font-weight: 900;
+            line-height: 1.15;
+            padding-bottom: 0.1em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #8ba7d4 40%, #4a6b8f 70%, var(--accent-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-style: italic;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        nav {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 100px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* ABOUT */
+        .about-section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 4px 40px rgba(107, 140, 206, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 3rem;
+            align-items: start;
+            position: relative;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), var(--warm));
+            border-radius: 24px 24px 0 0;
+        }
+
+        .bio {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .bio p { margin-bottom: 1rem; }
+
+        .bio a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 2px solid var(--warm);
+            transition: all 0.2s;
+        }
+
+        .bio a:hover {
+            border-bottom-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .mission-inline {
+            font-style: italic;
+            color: var(--text-medium);
+            border-top: 2px solid var(--accent-light);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 240px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(107, 140, 206, 0.2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* WORK */
+        .work-section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent);
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 20px rgba(107, 140, 206, 0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .work-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(107, 140, 206, 0.15);
+        }
+
+        .work-card:nth-child(1) { border-top: 4px solid var(--accent); }
+        .work-card:nth-child(2) { border-top: 4px solid var(--card-gold); }
+        .work-card:nth-child(3) { border-top: 4px solid var(--card-green); }
+        .work-card:nth-child(4) { border-top: 4px solid var(--card-pink); }
+
+        .work-card h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .work-card ul { list-style: none; }
+        .work-card li { margin-bottom: 0.6rem; }
+
+        .work-card a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .work-card a::before {
+            content: '\2192 ';
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .work-card a:hover::before { opacity: 1; }
+
+        .work-card:nth-child(1) a:hover, .work-card:nth-child(1) a::before { color: var(--accent); }
+        .work-card:nth-child(2) a:hover, .work-card:nth-child(2) a::before { color: var(--card-gold); }
+        .work-card:nth-child(3) a:hover, .work-card:nth-child(3) a::before { color: var(--card-green); }
+        .work-card:nth-child(4) a:hover, .work-card:nth-child(4) a::before { color: var(--card-pink); }
+
+        /* FOOTER */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .footer-links a:hover { text-decoration: underline; }
+
+        .footer-note {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .work-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .about-card { grid-template-columns: 1fr; }
+
+            .profile-image {
+                margin: 0 auto;
+            }
+
+            .hero::before, .hero::after { display: none; }
+        }
+
+        @media (max-width: 500px) {
+            .work-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="name">Chana Messinger</h1>
+            <p class="tagline">
+                Making the science-fictional present and future go well.
+                <br>Rationalist, effective altruist, and enthusiastic yapper.
+            </p>
+            <nav>
+                <a href="https://chanamessinger.substack.com/" target="_blank">Blog</a>
+                <a href="https://twitter.com/chanamessinger" target="_blank">Twitter</a>
+                <a href="other.html">Everything else</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="about-card">
+            <div class="bio">
+                <p>I make <a href="https://www.youtube.com/@AI_In_Context" target="_blank">videos about AI risk</a> for <a href="https://80000hours.org/" target="_blank">80,000 Hours</a>.</p>
+                <p>I used to be a teacher and work in community health.</p>
+                <p>I write <a href="https://chanamessinger.substack.com/" target="_blank">blogs</a>, make videos, record <a href="https://www.youtube.com/@ExpectedVolume" target="_blank">podcasts</a>. Sometimes I watercolor.</p>
+                <p>Proud rationalist, effective altruist, and other things.</p>
+                <p class="mission-inline">
+                    I want brilliant people working on important problems.
+                    I want far distant things in space and time to feel near and real.
+                    I want to get hard questions right.
+                </p>
+            </div>
+            <div class="profile-image">
+                <img src="profile.jpg" alt="Chana Messinger">
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work-section" id="work">
+        <h2 class="section-title">Things I make</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <h3>Writing</h3>
+                <ul>
+                    <li><a href="https://chanamessinger.substack.com/" target="_blank">Substack</a></li>
+                    <li><a href="other.html#writing">Other writing</a></li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <h3>Video</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AI_In_Context" target="_blank">AI in Context</a></li>
+                    <li><a href="other.html#video">Other video</a></li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <h3>Podcast</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/@ExpectedVolume" target="_blank">Expected Volume</a></li>
+                    <li><a href="other.html#podcast">Other podcast</a></li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <h3>Assorted Other</h3>
+                <ul>
+                    <li><a href="other.html#other">Things I've done</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-note">Made with the glories of Claude Cowork</p>
+    </footer>
+
+</body>
+</html>
