@@ -267,6 +267,14 @@
 
         .work-card a:hover::before { opacity: 1; }
 
+        /* Card title as link — inherit color, no arrow */
+        .work-card h3 .card-title-link {
+            color: inherit;
+            text-decoration: none;
+        }
+        .work-card h3 .card-title-link::before { display: none; }
+        .work-card:nth-child(4) h3 .card-title-link:hover { color: var(--card-pink); }
+
         .work-card:nth-child(1) a:hover, .work-card:nth-child(1) a::before { color: var(--accent); }
         .work-card:nth-child(2) a:hover, .work-card:nth-child(2) a::before { color: var(--card-gold); }
         .work-card:nth-child(3) a:hover, .work-card:nth-child(3) a::before { color: var(--card-green); }
@@ -385,8 +393,9 @@
             </div>
 
             <div class="work-card">
-                <h3>Assorted Other</h3>
+                <h3><a href="other.html" class="card-title-link">Assorted Other</a></h3>
                 <ul>
+                    <li><a href="other.html#tools">Tools I've built</a></li>
                     <li><a href="other.html#other">Other ways to find me</a></li>
                 </ul>
             </div>
